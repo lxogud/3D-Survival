@@ -16,7 +16,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &6150090976150759650
 Transform:
@@ -95,14 +95,14 @@ GameObject:
   - component: {fileID: 8172550076107600485}
   - component: {fileID: 3248595187204509209}
   - component: {fileID: 5532589293082134593}
-  - component: {fileID: 3024250853110112640}
   - component: {fileID: 9057361618603777508}
+  - component: {fileID: 2528595631827407776}
   m_Layer: 7
   m_Name: Jump_Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8172550076107600485
 Transform:
@@ -168,19 +168,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &3024250853110112640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6777364556508803366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c4960241e81cc743840b335198bcc65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2c0b3944d92fd9546bf30511728de0b3, type: 2}
 --- !u!114 &9057361618603777508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,4 +180,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3418955ba93c9f947b203946b37d580f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bounceForce: 100
+  bounceForce: 200
+--- !u!114 &2528595631827407776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6777364556508803366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9568e5139c6ab34d97757ec40af7daf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 2c0b3944d92fd9546bf30511728de0b3, type: 2}

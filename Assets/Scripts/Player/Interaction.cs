@@ -12,7 +12,7 @@ public class Interaction : MonoBehaviour
     public LayerMask layerMask;
 
     public GameObject curInteractGameObject;
-    private IInteractable curInteractable;
+    private IPromptShowable curInteractable;
 
     public TextMeshProUGUI promptText;
     private Camera camera;
@@ -40,7 +40,7 @@ public class Interaction : MonoBehaviour
                 if (hit.collider.gameObject != curInteractGameObject)
                 {
                     curInteractGameObject = hit.collider.gameObject;
-                    curInteractable = hit.collider.GetComponent<IInteractable>();
+                    curInteractable = hit.collider.GetComponent<IPromptShowable>();
                     // 프롬프트에 출력해줘라.
                     SetPromptText();
                 }
@@ -62,12 +62,16 @@ public class Interaction : MonoBehaviour
 
     public void OnInteractInput(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Started && curInteractable != null)
-        {
-            curInteractable.OnInteract();
-            curInteractGameObject = null;
-            curInteractable = null;
-            promptText.gameObject.SetActive(false);
-        }
+            if (context.phase == InputActionPhase.Started && curInteractable != null)
+            {
+                if(curInteractGameObject.TryGetComponent<IInteractable>(out var interactable))
+            {
+                interactable.OnInteract();
+                curInteractGameObject = null;
+                curInteractable = null;
+                promptText.gameObject.SetActive(false);
+            }
+               
+            }
     }
 }

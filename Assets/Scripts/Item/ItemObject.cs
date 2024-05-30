@@ -5,10 +5,14 @@ using UnityEngine;
 
 public interface IInteractable
 {
-    public string GetInteractPrompt();
     public void OnInteract();
 }
-public class ItemObject : MonoBehaviour, IInteractable
+
+public interface IPromptShowable
+{
+    public string GetInteractPrompt();
+}
+public class ItemObject : MonoBehaviour, IInteractable, IPromptShowable
 {
     public ItemData data;
  
